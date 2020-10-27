@@ -1,4 +1,47 @@
+/******************************	
+[Table of Contents]	
+1. Vars and Inits	
+2. Set Header	
+3. Init Menu	
+4. Init Input	
+5. Init Milestones	
+******************************/	
 
+$(document).ready(function()	
+{	
+	"use strict";	
+
+	/* 	
+	1. Vars and Inits	
+	*/	
+
+	var header = $('.header');	
+	var headerSocial = $('.header_social');	
+	var menu = $('.menu');	
+	var menuActive = false;	
+	var burger = $('.hamburger');	
+	var ctrl = new ScrollMagic.Controller();	
+
+	setHeader();	
+
+	$(window).on('resize', function()	
+	{	
+		setHeader();	
+
+		setTimeout(function()	
+		{	
+			$(window).trigger('resize.px.parallax');	
+		}, 375);	
+	});	
+
+	$(document).on('scroll', function()	
+	{	
+		setHeader();	
+	});	
+
+	initMenu();	
+	initInput();	
+	initMilestones();
 
 	/* 
 
@@ -22,7 +65,7 @@
 
 	/* 
 
-	3. Set Menu
+	3 .    Set Menu
 
 	*/
 
